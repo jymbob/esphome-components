@@ -166,8 +166,10 @@ namespace esphome
 
     void LampSmartV2Light::setup()
     {
+      #ifdef USE_API
       register_service(&LampSmartV2Light::on_pair, light_state_ ? "pair_" + light_state_->get_object_id() : "pair");
       register_service(&LampSmartV2Light::on_unpair, light_state_ ? "unpair_" + light_state_->get_object_id() : "unpair");
+      #endif
     }
 
     light::LightTraits LampSmartV2Light::get_traits()
