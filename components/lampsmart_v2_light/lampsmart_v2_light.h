@@ -38,6 +38,7 @@ class LampSmartV2Light : public light::LightOutput, public Component, public Ent
 
  protected:
   void send_packet(uint16_t cmd, uint8_t cold, uint8_t warm);
+  char *getHostDeviceIdentifier();
 
   float cold_white_temperature_{167};
   float warm_white_temperature_{333};
